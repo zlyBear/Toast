@@ -47,7 +47,7 @@ fileprivate class ShowAnimationDelegate: NSObject, CAAnimationDelegate {
 
 func showAnimation(view: View, style: Style) {
     let anim = CABasicAnimation(keyPath: "opacity")
-    let timing = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+    let timing = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
     anim.timingFunction = timing
     let currentLayerTime = view._layer.convertTime(CACurrentMediaTime(), from: nil)
     anim.beginTime = currentLayerTime + CFTimeInterval(style.fadeInOutDelay)
@@ -62,7 +62,7 @@ func showAnimation(view: View, style: Style) {
 
 func hideAnimation(view: View, style: Style) {
     let anim = CABasicAnimation(keyPath: "opacity")
-    let timing = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+    let timing = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
     anim.timingFunction = timing
     let currentLayerTime = view._layer.convertTime(CACurrentMediaTime(), from: nil)
     anim.beginTime = currentLayerTime + CFTimeInterval(style.fadeInOutDelay)

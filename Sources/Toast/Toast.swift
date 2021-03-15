@@ -167,7 +167,7 @@ class ToastView: View {
         text.string = message
         text.font = Font.systemFont(ofSize: style.fontSize)
         text.fontSize = style.fontSize
-        text.alignmentMode = "center"
+        text.alignmentMode = CATextLayerAlignmentMode(rawValue: "center")
         text.foregroundColor = style.foregroundColor.cgColor
         text.backgroundColor = style.backgroundColor.cgColor
         text.contentsScale = _layer.contentsScale // For Retina Display
